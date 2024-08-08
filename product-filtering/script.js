@@ -1,85 +1,85 @@
 const products = [
   {
-    name: 'Sony Playstation 5',
-    url: 'images/playstation_5.png',
-    type: 'games',
+    name: "Sony Playstation 5",
+    url: "images/playstation_5.png",
+    type: "games",
     price: 499.99,
   },
   {
-    name: 'Samsung Galaxy',
-    url: 'images/samsung_galaxy.png',
-    type: 'smartphones',
+    name: "Samsung Galaxy",
+    url: "images/samsung_galaxy.png",
+    type: "smartphones",
     price: 399.99,
   },
   {
-    name: 'Cannon EOS Camera',
-    url: 'images/cannon_eos_camera.png',
-    type: 'cameras',
+    name: "Cannon EOS Camera",
+    url: "images/cannon_eos_camera.png",
+    type: "cameras",
     price: 749.99,
   },
   {
-    name: 'Sony A7 Camera',
-    url: 'images/sony_a7_camera.png',
-    type: 'cameras',
+    name: "Sony A7 Camera",
+    url: "images/sony_a7_camera.png",
+    type: "cameras",
     price: 1999.99,
   },
   {
-    name: 'LG TV',
-    url: 'images/lg_tv.png',
-    type: 'televisions',
+    name: "LG TV",
+    url: "images/lg_tv.png",
+    type: "televisions",
     price: 799.99,
   },
   {
-    name: 'Nintendo Switch',
-    url: 'images/nintendo_switch.png',
-    type: 'games',
+    name: "Nintendo Switch",
+    url: "images/nintendo_switch.png",
+    type: "games",
     price: 299.99,
   },
   {
-    name: 'Xbox Series X',
-    url: 'images/xbox_series_x.png',
-    type: 'games',
+    name: "Xbox Series X",
+    url: "images/xbox_series_x.png",
+    type: "games",
     price: 499.99,
   },
   {
-    name: 'Samsung TV',
-    url: 'images/samsung_tv.png',
-    type: 'televisions',
+    name: "Samsung TV",
+    url: "images/samsung_tv.png",
+    type: "televisions",
     price: 1099.99,
   },
   {
-    name: 'Google Pixel',
-    url: 'images/google_pixel.png',
-    type: 'smartphones',
+    name: "Google Pixel",
+    url: "images/google_pixel.png",
+    type: "smartphones",
     price: 499.99,
   },
   {
-    name: 'Sony ZV1F Camera',
-    url: 'images/sony_zv1f_camera.png',
-    type: 'cameras',
+    name: "Sony ZV1F Camera",
+    url: "images/sony_zv1f_camera.png",
+    type: "cameras",
     price: 799.99,
   },
   {
-    name: 'Toshiba TV',
-    url: 'images/toshiba_tv.png',
-    type: 'televisions',
+    name: "Toshiba TV",
+    url: "images/toshiba_tv.png",
+    type: "televisions",
     price: 499.99,
   },
   {
-    name: 'iPhone 14',
-    url: 'images/iphone_14.png',
-    type: 'smartphones',
+    name: "iPhone 14",
+    url: "images/iphone_14.png",
+    type: "smartphones",
     price: 999.99,
   },
 ];
 
 // Get DOM elements
-const productsWrapperEl = document.getElementById('products-wrapper');
-const checkEls = document.querySelectorAll('.check');
-const filtersContainer = document.getElementById('filters-container');
-const searchInput = document.getElementById('search');
-const cartButton = document.getElementById('cartButton');
-const cartCount = document.getElementById('cartCount');
+const productsWrapperEl = document.getElementById("products-wrapper");
+const checkEls = document.querySelectorAll(".check");
+const filtersContainer = document.getElementById("filters-container");
+const searchInput = document.getElementById("search");
+const cartButton = document.getElementById("cartButton");
+const cartCount = document.getElementById("cartCount");
 
 // Initialize cart item count
 let cartItemCount = 0;
@@ -95,14 +95,14 @@ products.forEach((product) => {
 });
 
 // Add filter event listeners
-filtersContainer.addEventListener('change', filterProducts);
-searchInput.addEventListener('input', filterProducts);
+filtersContainer.addEventListener("change", filterProducts);
+searchInput.addEventListener("input", filterProducts);
 
 // Create product element
 function createProductElement(product) {
-  const productEl = document.createElement('div');
+  const productEl = document.createElement("div");
 
-  productEl.className = 'item space-y-2';
+  productEl.className = "item space-y-2";
 
   productEl.innerHTML = `<div
   class="bg-gray-100 flex justify-center relative overflow-hidden group cursor-pointer border"
@@ -120,7 +120,7 @@ function createProductElement(product) {
 <p class="text-xl">${product.name}</p>
 <strong>$${product.price.toLocaleString()}</strong>`;
 
-  productEl.querySelector('.status').addEventListener('click', addToCart);
+  productEl.querySelector(".status").addEventListener("click", addToCart);
 
   return productEl;
 }
@@ -129,20 +129,20 @@ function createProductElement(product) {
 function addToCart(e) {
   const statusEl = e.target;
 
-  if (statusEl.classList.contains('added')) {
+  if (statusEl.classList.contains("added")) {
     // Remove from cart
-    statusEl.classList.remove('added');
-    statusEl.innerText = 'Add To Cart';
-    statusEl.classList.remove('bg-red-600');
-    statusEl.classList.add('bg-gray-800');
+    statusEl.classList.remove("added");
+    statusEl.innerText = "Add To Cart";
+    statusEl.classList.remove("bg-red-600");
+    statusEl.classList.add("bg-gray-800");
 
     cartItemCount--;
   } else {
     // Add to cart
-    statusEl.classList.add('added');
-    statusEl.innerText = 'Remove From Cart';
-    statusEl.classList.remove('bg-gray-800');
-    statusEl.classList.add('bg-red-600');
+    statusEl.classList.add("added");
+    statusEl.innerText = "Remove From Cart";
+    statusEl.classList.remove("bg-gray-800");
+    statusEl.classList.add("bg-red-600");
 
     cartItemCount++;
   }
@@ -172,9 +172,10 @@ function filterProducts() {
 
     // Show or hide product based on matches
     if (matchesSearchTerm && isInCheckedCategory) {
-      productEl.classList.remove('hidden');
+      productEl.classList.remove("hidden");
     } else {
-      productEl.classList.add('hidden');
+      productEl.classList.add("hidden");
     }
   });
 }
+//start
