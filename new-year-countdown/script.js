@@ -1,10 +1,10 @@
-const days = document.getElementById('days');
-const hours = document.getElementById('hours');
-const minutes = document.getElementById('minutes');
-const seconds = document.getElementById('seconds');
-const countdown = document.getElementById('countdown');
-const year = document.getElementById('year');
-const loading = document.getElementById('loading');
+const days = document.getElementById("days");
+const hours = document.getElementById("hours");
+const minutes = document.getElementById("minutes");
+const seconds = document.getElementById("seconds");
+const countdown = document.getElementById("countdown");
+const year = document.getElementById("year");
+const loading = document.getElementById("loading");
 
 const currentYear = new Date().getFullYear();
 
@@ -25,16 +25,17 @@ function updateCountdown() {
 
   // Add values to DOM
   days.innerHTML = d;
-  hours.innerHTML = h < 10 ? '0' + h : h;
-  minutes.innerHTML = m < 10 ? '0' + m : m;
-  seconds.innerHTML = s < 10 ? '0' + s : s;
+  hours.innerHTML = h < 10 ? "0" + h : h;
+  minutes.innerHTML = m < 10 ? "0" + m : m;
+  seconds.innerHTML = s < 10 ? "0" + s : s;
 }
 
 // Show spinner before countdown
 setTimeout(() => {
   loading.remove();
-  countdown.style.display = 'flex';
+  countdown.style.display = "flex";
 }, 1000);
 
 // Run every second
 setInterval(updateCountdown, 1000);
+//start
